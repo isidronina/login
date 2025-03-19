@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login RH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Página de Login -->
+    <div class="login-container" id="login-container">
+        <h2>Login do RH</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="login-error" class="error"></p>
+    </div>
+
+    <!-- Tela Principal (aparece após login) -->
+    <div class="dashboard-container" id="dashboard-container" style="display: none;">
+        <nav>
+            <ul>
+                <li><button onclick="openTab('funcionarios')">Visualizar Funcionários</button></li>
+                <li><button onclick="openTab('saldos')">Visualizar Saldo</button></li>
+                <li><button onclick="openTab('alterar-saldo')">Alterar Saldo</button></li>
+            </ul>
+        </nav>
+
+        <!-- Guias -->
+        <div id="funcionarios" class="tab-content" style="display:none;">
+            <h3>Funcionários</h3>
+            <ul id="employee-list">
+                <!-- Lista de funcionários aparecerá aqui -->
+            </ul>
+        </div>
+        <div id="saldos" class="tab-content" style="display:none;">
+            <h3>Visualizar Saldo</h3>
+            <div id="saldo-info">
+                <!-- Informações do saldo aparecerão aqui -->
+            </div>
+        </div>
+        <div id="alterar-saldo" class="tab-content" style="display:none;">
+            <h3>Alterar Saldo</h3>
+            <form id="alterar-saldo-form">
+                <input type="text" id="employee-id" placeholder="ID do Funcionário" required>
+                <input type="number" id="novo-saldo" placeholder="Novo Saldo" required>
+                <button type="submit">Alterar Saldo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
